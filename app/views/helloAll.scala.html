@@ -1,0 +1,21 @@
+@(personList: List[model.PersonEntity])
+@main("Names") {
+  <h1>Names</h1>
+  <table id="tableAllPerson" style="width: 80%; top: 96px; position: relative; margin-left: auto; margin-right: auto;">
+    @for(person <- personList){
+      <tr>
+        <th><a href="@routes.HomeController.helloOne(person.getId())" style="margin-left: 48px; font-size: x-large;">@(person.getName())  @(person.getFirstName())</a></th>
+        <th style="text-align: center;"><a href="@routes.HomeController.update(person.getId())" style="font-size: x-large;">Update</a></th> <!-- style="margin-left: 8px;" -->
+        <!--<th style="text-align: center;"><a href="@routes.HomeController.delete(person.getId())" style="text-align: right; margin-right: 24px; font-size: x-large;">Delete</a></th>--> <!-- style="margin-left: 8px;" -->
+        <th style="text-align: center;"><a href="#" onclick="remove('@routes.HomeController.delete(person.getId())', '@routes.HomeController.helloAll()')" style="text-align: right; margin-right: 24px; font-size: x-large;">Delete</a></th>
+
+        <!--@helper.form(action = routes.HomeController.delete(person.getId())){
+          <input type="submit" value="delete"/>
+        }-->
+        <!--<a href="#" onclick="remove('@routes.HomeController.delete(person.getId())', '@routes.HomeController.helloAll()')">Hello</a>-->
+        <!--<a href="#" onclick="update('@routes.HomeController.update(person.getId())', '@routes.HomeController.helloAll()')">Update</a>-->
+
+      </tr>
+    }
+  </table>
+}

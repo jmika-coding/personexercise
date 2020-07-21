@@ -1,0 +1,17 @@
+@main("Person Exercise") {
+  <div class="header">
+    <h1>Person Exercise</h1>
+  </div>
+
+  <div style="margin-left: 8px;">
+
+    <div class="homeBlockDiv" style="float: left;">
+      <a href="@routes.HomeController.helloAll()" class="homeBlock" style="float: left; text-decoration: none; color: #3e3e40"><h2 class="centerTextInsideBlock">View all Person</h2></a>
+    </div>
+
+    <div class="homeBlockDiv" style="float: right;">
+      <a href="@routes.HomeController.personForm()" class="homeBlock" style="float: right; text-decoration: none; color: #3e3e40;"><h2 class="centerTextInsideBlock">Create a new Person</h2></a>
+    </div>
+
+  </div>
+}

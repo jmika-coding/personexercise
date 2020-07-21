@@ -1,0 +1,18 @@
+@(personForm: Form[model.PersonModel])(implicit messagesProvider: MessagesProvider)
+
+@main("Person form") {
+    @helper.form(action = routes.HomeController.personFormSubmit){
+        <h1>Person form</h1>
+
+        <div style="margin: 24px; padding: 16px; width: 90%;">
+            <h2>Enter person info: </h2>
+            <div style="margin-left: 48px; margin-top: 48px;">
+             @helper.inputText(personForm("name"))
+             @helper.inputText(personForm("firstName"))
+             @helper.inputText(personForm("age"))
+
+            <input type="submit" value="Submit" style="float: right; height: 50px; width: 100px; background-color: whitesmoke; font-size: 150%; margin-top: 48px;"/>
+            </div>
+        </div>
+    }
+}

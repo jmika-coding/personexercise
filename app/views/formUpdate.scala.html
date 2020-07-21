@@ -1,0 +1,10 @@
+@(personForm: Form[model.PersonModel])(implicit messagesProvider: MessagesProvider)
+
+@helper.form(action = routes.HomeController.personForm){ <!-- Update-->
+    <h2>Enter person info: </h2>
+     @helper.inputText(personForm("name"))
+     @helper.inputText(personForm("firstName"))
+     @helper.inputText(personForm("age"))
+
+    <input type="submit" value="Update"/>
+}

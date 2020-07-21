@@ -1,0 +1,14 @@
+GET       /                         controllers.HomeController.index
+GET       /persons                  controllers.HomeController.helloAll
+GET       /persons/:id              controllers.HomeController.helloOne(id: String)
+
+# GET     /personForm             Specific to play
+GET       /personForm               controllers.HomeController.personForm(request: Request)
+
+POST      /persons                  controllers.HomeController.personFormSubmit(request: Request)
+
+DELETE    /persons                  controllers.HomeController.delete(id: String)
+GET       /persons2                  controllers.HomeController.update(id: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET       /assets/*file             controllers.Assets.versioned(path="/public", file: Asset)

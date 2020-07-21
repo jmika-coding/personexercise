@@ -1,0 +1,10 @@
+@(personList: List[model.PersonEntity])
+@main("Hello") {
+  <h1>Hello !</h1>
+  @for(person <- personList){
+    <div>
+      <h2 style="font-size: 500%; margin: 5%; top: 8vh; position: relative;">Hello, @(person.getName())  @(person.getFirstName())</h2>
+      <p style="font-size: 500%; margin: 10%; margin-left: 20%; margin-top: 30vh;">Your age is @(person.getAge()) years old</p>
+    </div>
+  }
+}
