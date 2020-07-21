@@ -10,12 +10,9 @@ public class DatabaseConnection {
 
     private MongoCollection<Document> documentMongoCollection;
 
-    public /*MongoCollection<Document>*/ DatabaseConnection(){
+    public DatabaseConnection(){
         MongoClient mongoClient = MongoClients.create("mongodb://root:example@localhost:27000");
-        //MongoCredential mongoCredential = MongoCredential.createCredential("root", "mydatabase", "example".toCharArray());
         MongoDatabase mongoDatabase = mongoClient.getDatabase("mydatabase");
-        /*MongoCollection<Document> mongoCollection =*/
-        //return mongoDatabase.getCollection("Person");
         this.documentMongoCollection = mongoDatabase.getCollection("Person");
         System.err.println("Creation database");
     }
